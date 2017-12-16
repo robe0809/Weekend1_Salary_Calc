@@ -3,24 +3,68 @@
   <head>
     <meta charset="utf-8">
     <title>Salary Calculation</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
-    <table>
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>ID Number</th>
-        <th>Job Title</th>
-        <th>Annual Salary</th>
-      </tr>
-      </thead>
-      <tbody id="employeeTableBody">
+    <header>
+      <h1>Employee Salary Calculation</h1>
+    </header>
 
-      </tbody>
-    </table>
+    <section class="formSection">
+      <form class="userInformation" action="index.html" method="post">
+        <div class="input">
+          <p>Last Name</p>
+          <input type="text" id="lastName" placeholder="Last Name">
+        </div>
+        <div class="input">
+          <p>First Name</p>
+          <input type="text" id="firstName" placeholder="First Name">
+        </div>
+        <div class="input">
+          <p>ID Number</p>
+          <input type="number" id="idNumber" placeholder="Id Number">
+        </div>
+        <div class="input">
+          <p>Job Title</p>
+          <input type="text" id="jobTitle" placeholder="JobTitle">
+        </div>
+        <div class="input">
+          <p>Annual Salary</p>
+          <input type="number" id="annualSal" placeholder="Annual Salary">
+        </div>
+        <div class="input">
+          <p><button type="button" id="submitBtn">Submit</button></p>
+        </div>
+      </form>
+    </section>
 
+    <section class="tableSection">
+      <table>
+        <thead>
+        <tr>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Id Number</th>
+          <th>Job Title</th>
+          <th>Annual Salary</th>
+        </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+
+        </tbody>
+        <tbody>
+          <tr id='totals'>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total Salary: <span id='totalSalaries'></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </body>
 </html>

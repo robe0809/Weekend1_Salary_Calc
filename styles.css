@@ -1,7 +1,44 @@
 body {
   text-align: center;
-  margin 
 }
-td, tr {
-
+/* Table Section */
+.tableSection {
+  width: 70%;
+  float: right
+}
+thead {
+  text-decoration: underline;
+}
+table {
+  width: 90%;
+  border-left: 2px solid lightgrey;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+th {
+  height: 10px;
+  border: 1px solid black;
+  background-color: lightblue;
+}
+/* form Section */
+.formSection {
+  width: 30%;
+  float: left;
+}
+form {
+  width: 90%;
+  border-right: 2px solid lightgrey;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 10px;
+    border-radius: 5px;
+}
+input[type=text], input[type=number] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
 }

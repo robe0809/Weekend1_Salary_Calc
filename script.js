@@ -1,33 +1,33 @@
-// create employee object to store information on every employee
-class EmployeeObject {
-  constructor(name, idnumber, title, annualSalary) {
-    this.name = name;
-    this.id = idnumber;
-    this.title = title;
-    this.salary = annualSalary;
-  }
-}// end employee EmployeeObject
+var annualSalary = 0;
 
-//some object literals to test my application
-var ian = new EmployeeObject('Ian Robertson', 23453, 'Software Engineer', 2000000);
-var mike = new EmployeeObject('Mike Anderson', 23453, 'Java Developer', 100000);
-
-var emps = [ian, mike];
-console.log(emps);
-
-// Appending objects to the DOM
 $(document).ready(start);
+console.log('ready');
+// Accepts Jquery functions
 function start () {
-addEmployee();
+$('#employeeTableBody').on('click', '#remove', removeEmployee);
+$('#submitBtn').on('click', addEmployee);
 }
-
+console.log('readyagain');
+// Function to add user input to the table.
 function addEmployee () {
-  for(var i = 0; i < emps.length; i++) {
-    var $row = $('<tr>');
-    $row.append('<td>' + emps[i].name + '</td>');
-    $row.append('<td>' + emps[i].id + '</td>');
-    $row.append('<td>' + emps[i].title + '</td>');
-    $row.append('<td>' + emps[i].salary + '</td>');
-    $('#employeeTableBody').append($row);
-  }
-}
+  var $row = $('<tr>');
+$row.append('<td>' + $('#lastName').val() + '</td>'); // appending user last name
+$row.append('<td>' + $('#firstName').val() + '</td>'); // appending user first name
+$row.append('<td>' + $('#idNumber').val() + '</td>'); // appending user id number
+$row.append('<td>' + $('#jobTitle').val() + '</td>'); // appending user job title
+$row.append('<td>' + $('#annualSal').val() + '</td>'); // appending user salary
+$row.append('<td> <button type="button" id="remove">Remove Employee</button> </td>'); // adding remove employee button to each employee
+$('#totalSalaries').text(salarySum()); // totals salary after adding salarySum function
+$('#employeeTableBody').append($row);
+$('input').val(''); // empties input fields once submit button is pressed.
+}// end addEmployee
+
+// Function to total salaries that users enter.
+function salarySum () {
+return annualSalary += Number($('#annualSal').val());
+}// end salarySum
+
+// Function to remove an employee when button is clicked.
+function removeEmployee () {
+$(this).parent().parent().remove();
+} // end removeEmployee
