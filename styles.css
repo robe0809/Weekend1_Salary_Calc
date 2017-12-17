@@ -8,11 +8,14 @@ body {
 header {
   height: 100px;
   margin: auto 0;
-  background-color: #039;
+  background-color: lightgrey;
+  border-bottom: 2px solid #039;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 10px;
 }
 h1 {
 position: relative;
-color: white;
+color: #039;
 top: 25px;
 font-weight:100;
 }
@@ -59,9 +62,10 @@ tr {
 form {
   width: 90%;
   margin: 5%;
+  background-color: lightgrey;
   border-top: 2px solid #039;
   border-bottom: 2px solid #039;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #submitBtn {
@@ -80,6 +84,7 @@ input[type=text], input[type=number] {
     border-bottom: 1px solid grey;
     text-align: center;
     font-size: 16px;
+    background-color: lightgrey;
 }
 input::placeholder {
   text-align: center;
