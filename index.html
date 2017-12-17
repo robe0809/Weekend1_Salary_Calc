@@ -16,27 +16,27 @@
     <section class="formSection">
       <form class="userInformation" action="index.html" method="post">
         <div class="input">
-          <p>Last Name</p>
+          <!-- <p>Last Name</p> -->
           <input type="text" id="lastName" placeholder="Last Name">
         </div>
         <div class="input">
-          <p>First Name</p>
+          <!-- <p>First Name</p> -->
           <input type="text" id="firstName" placeholder="First Name">
         </div>
         <div class="input">
-          <p>ID Number</p>
+          <!-- <p>ID Number</p> -->
           <input type="number" id="idNumber" placeholder="Id Number">
         </div>
         <div class="input">
-          <p>Job Title</p>
+          <!-- <p>Job Title</p> -->
           <input type="text" id="jobTitle" placeholder="JobTitle">
         </div>
         <div class="input">
-          <p>Annual Salary</p>
+          <!-- <p>Annual Salary</p> -->
           <input type="number" id="annualSal" placeholder="Annual Salary">
         </div>
         <div class="input">
-          <p><button type="button" id="submitBtn">Submit</button></p>
+          <button type="button" id="submitBtn">Submit</button>
         </div>
       </form>
     </section>
@@ -45,26 +45,27 @@
       <table>
         <thead>
         <tr>
+          <th>#</th>
           <th>Last Name</th>
           <th>First Name</th>
           <th>Id Number</th>
           <th>Job Title</th>
           <th>Annual Salary</th>
+          <th>Total Monthly Cost</th>
         </tr>
         </thead>
         <tbody id="employeeTableBody">
-
         </tbody>
-        <tbody>
-          <tr id='totals'>
+        <tfoot>
+        <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>Total Salary: <span id='totalSalaries'></span></td>
+            <th id="sals">Annual Salaries:</th>
+            <td id="totalSalaries"></td>
           </tr>
-        </tbody>
-      </table>
+        </tfoot>
     </section>
   </body>
 </html>

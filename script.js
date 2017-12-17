@@ -1,28 +1,31 @@
 var annualSalary = 0;
-
+var monthlyCost = 0;
+var employeeCount = 1;
 $(document).ready(start);
-console.log('ready');
-// Accepts Jquery functions
+
 function start () {
 $('#employeeTableBody').on('click', '#remove', removeEmployee);
 $('#submitBtn').on('click', addEmployee);
 }
-console.log('readyagain');
 // Function to add user input to the table.
 function addEmployee () {
   var $row = $('<tr>');
-$row.append('<td>' + $('#lastName').val() + '</td>'); // appending user last name
-$row.append('<td>' + $('#firstName').val() + '</td>'); // appending user first name
-$row.append('<td>' + $('#idNumber').val() + '</td>'); // appending user id number
-$row.append('<td>' + $('#jobTitle').val() + '</td>'); // appending user job title
-$row.append('<td>' + $('#annualSal').val() + '</td>'); // appending user salary
-$row.append('<td> <button type="button" id="remove">Remove Employee</button> </td>'); // adding remove employee button to each employee
+  var $another = $('<tfoot><tr>');
+$row.append('<td class="row">' + employeeCount++ + '</td>').fadeIn();
+$row.append('<td class="row">' + $('#lastName').val() + '</td>').fadeIn();
+$row.append('<td class="row">' + $('#firstName').val() + '</td>').fadeIn();
+$row.append('<td class="row">' + $('#idNumber').val() + '</td>').fadeIn();
+$row.append('<td class="row">' + $('#jobTitle').val() + '</td>').fadeIn();
+$row.append('<td class="row">' + $('#annualSal').val() + '</td>').fadeIn();
+$row.append('<td class="row">' + Math.round(($('#annualSal').val()/12)) + '</td>');
+$row.append('<td class="row"> <button type="button" id="remove">Delete</button> </td>'); // remove employee button
 $('#totalSalaries').text(salarySum()); // totals salary after adding salarySum function
+//$('#monthlyCosts').text(Math.round((salarySum()/12))/100); // total monthly Cost based on all salaries.
 $('#employeeTableBody').append($row);
 $('input').val(''); // empties input fields once submit button is pressed.
 }// end addEmployee
 
-// Function to total salaries that users enter.
+// Function to total salaries that user enters.
 function salarySum () {
 return annualSalary += Number($('#annualSal').val());
 }// end salarySum
