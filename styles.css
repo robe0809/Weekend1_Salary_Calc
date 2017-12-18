@@ -8,18 +8,20 @@ body {
 header {
   height: 100px;
   margin: auto 0;
-  background-color: lightgrey;
   border-bottom: 2px solid #039;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 10px;
 }
-h1 {
+h1, h2 {
 position: relative;
 color: #039;
 top: 25px;
 font-weight:100;
 }
-
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 /* Table Section */
 .tableSection {
   width: 100%;
@@ -41,17 +43,17 @@ th {
 tr {
   color: #039;
   border-spacing: 2px;
+  border-bottom: 1px solid grey;
 }
 #sals, #totalSalaries {
   border: 0;
 }
-.row {
+td {
   font-size: 12px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-  border-bottom: 1px solid grey;
 }
-.row:hover{
-  opacity: .5;
+tr:hover {
+  opacity: 0.5;
 }
 
 /* form Section */
@@ -60,16 +62,13 @@ tr {
   text-align: center;
 }
 form {
-  width: 90%;
-  margin: 5%;
-  background-color: lightgrey;
-  border-top: 2px solid #039;
+  width: 40%;
+  margin: 5% auto;
   border-bottom: 2px solid #039;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
 }
 #submitBtn {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
     margin-top: 10px;
     border-radius: 5px;
     text-align: center;
@@ -84,7 +83,9 @@ input[type=text], input[type=number] {
     border-bottom: 1px solid grey;
     text-align: center;
     font-size: 16px;
-    background-color: lightgrey;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: .3;
 }
 input::placeholder {
   text-align: center;
