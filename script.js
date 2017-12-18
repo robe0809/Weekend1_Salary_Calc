@@ -15,7 +15,7 @@ $(document).ready(start);
 //   monthlyCost () {
 //     return  Number(this.annaulSalary/12);
 //   }
-// } // EmployeeObject Class
+// } // end EmployeeObject Class
 //
 // var employee = new EmployeeObject($('#firstName').val(), $('#firstName').val(), $('#lastName').val(),
 // $('#idNumber').val(), $('#jobTitle').val(), $('#annaulSalary').val()); // new employee object.
@@ -26,9 +26,11 @@ $(document).ready(start);
 // my thought process.
 
 function start () {
+salarySum();
 $('#employeeTableBody').on('click', '#remove', removeEmployee);
 $('#submitBtn').on('click', addEmployee);
 }
+
 // Function to add user input to the table.
 function addEmployee () {
   var $row = $('<tr>');
