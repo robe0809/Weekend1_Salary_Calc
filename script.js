@@ -39,8 +39,8 @@ $row.append('<td>' + $('#firstName').val() + '</td>');
 $row.append('<td>' + $('#lastName').val() + '</td>');
 $row.append('<td>' + $('#idNumber').val() + '</td>');
 $row.append('<td>' + $('#jobTitle').val() + '</td>');
-$row.append('<td>' + $('#annualSal').val() + '</td>');
-$row.append('<td>' + Math.round(($('#annualSal').val()/12)) + '</td>');
+$row.append('<td class="sal">' + $('#annualSal').val() + '</td>');
+$row.append('<td class="cost">' + Math.round(($('#annualSal').val()/12)) + '</td>');
 $row.append('<td id="row"> <button type="button" id="remove">Delete</button> </td>'); // remove employee button
 $('#totalSalaries').text('Total:' + salarySum()); // totals salary after adding salarySum function
 $('#monthlyCosts').text('Total:' + monthlySum()); // totals monthly Costs
@@ -61,4 +61,13 @@ function monthlySum () {
 // Function to remove an employee when button is clicked.
 function removeEmployee () {
 $(this).parent().parent().remove();
+// removes deleted employee salary from total;
+var empSalary = $(this).closest('tr').find('.sal').text();
+annualSalary -= empSalary;
+$('#totalSalaries').text('Total:' + salarySum());
+// removes deleted employee monthly cost from total;
+var empCost = $(this).closest('tr').find('.cost').text();
+monthlyCost -= empCost;
+$('#monthlyCosts').text('Total:' + monthlySum());
+
 } // end removeEmployee
